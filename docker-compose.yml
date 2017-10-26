@@ -1,0 +1,16 @@
+react_container:
+  container_name: react-content
+  ports:
+    - "3000:3000"
+  command: | 
+    bash -c "
+    npm install
+    npm start
+    "
+
+  working_dir: /projet
+  volumes:
+    - "./:/projet"
+    - "./package.json:/projet/package.json"
+    
+  image: spefalex/react-js:latest
